@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User List - JSONPlaceholder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2em;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 0.5em 0;
+      }
+      a {
+        color: #0074d9;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User List</h1>
+    <ul id="user-list"></ul>
+
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((users) => {
+          const userList = document.getElementById("user-list");
+          users.forEach((user) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = user.name;
+            a.href = "#";
+            a.addEventListener("click", function (e) {
+              e.preventDefault();
+              alert(user.email);
+            });
+            li.appendChild(a);
+            userList.appendChild(li);
+          });
+        })
+        .catch((error) => {
+          document.getElementById("user-list").textContent =
+            "Failed to load users.";
+          console.error("Error fetching users:", error);
+        });
+    </script>
+  </body>
+</html>
