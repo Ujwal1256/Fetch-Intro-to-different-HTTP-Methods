@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="""en
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD App with mockapi.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <style>
+        .loading { 
+          opacity: 0.6;
+          pointer-events: none;
+         }
+        .error {
+            color: red;
+         }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="mb-4 text-center">Student CRUD App</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <form id="studentForm" class="card p-3 mb-4">
+                    <input type="hidden" id="studentId">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" id="name" class="form-control" required>
+                        <div class="error" id="nameError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age *</label>
+                        <input type="number" id="age" class="form-control" required>
+                        <div class="error" id="ageError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="course" class="form-label">Course</label>
+                        <input type="text" id="course" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Add Student</button>
+                    <button type="button" class="btn btn-secondary d-none" id="cancelEditBtn">Cancel</button>
+                    <div class="mt-2 error" id="formError"></div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div id="loading" class="text-center my-3 d-none">Loading...</div>
+                <div id="apiError" class="error mb-2"></div>
+                <table class="table table-bordered bg-white">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Course</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>"></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Search & Filter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Product Search & Filter</h1>
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search by title..." />
+        <select id="category">
+            <option value="">All Categories</option>
+        </select>
+        <select id="sort">
+            <option value="asc">Sort by Price: Low to High</option>
+            <option value="desc">Sort by Price: High to Low</option>
+        </select>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="products" id="products"></div>
+
+    <script src="script.js"> </script>
+</body>
+</html>
